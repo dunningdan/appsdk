@@ -386,12 +386,6 @@ public class HttpClient {
 	}
 	
 	private void bypassSSL(HttpsURLConnection conn)  {
-		conn.setHostnameVerifier(new HostnameVerifier() {
-			@Override
-			public boolean verify(String hostname, SSLSession session) {
-				return true;
-			}
-		});
 
 		TrustManager[] trustManagers = new TrustManager[] { new X509TrustManager() {
 
